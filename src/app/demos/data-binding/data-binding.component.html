@@ -1,0 +1,33 @@
+<div class="container main-container">
+  <h3>Interpolation</h3>
+
+  <p [ngClass]="{
+    'text-secondaray': clickCount < 3,
+    'text-success': clickCount >= 3,
+    'text-warning': clickCount >= 5,
+    'text-danger': clickCount >=9}">
+    O número de cliques é: {{ clickCount }}
+  </p>
+
+  <br>
+  <br>
+
+  <h3>Property Binding</h3>
+  <button class="btn btn-info" [disabled]="clickCount >= 10">Info</button> <br><br>
+  <img [src]="urlImage" height="50px" width="50px" />
+
+  <br>
+  <br>
+
+  <h3>Event Biding</h3>
+  <button class="btn btn-warning" (click)="clickEvent()">Click Here</button>
+  
+  <button class="btn btn-info" (click)="clearCountEvent()" [disabled]="clickCount < 10">Clear Count</button>
+
+  <br>
+  <br>
+
+  <input type="text" [(ngModel)]="text" placeholder="Text here" />
+  <br>
+  <label>Text: {{ text }}</label>
+</div>
